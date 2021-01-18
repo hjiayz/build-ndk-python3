@@ -13,7 +13,7 @@ export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
 cd libffi-3.3
-./configure --host=x86_64-linux -build=$TARGET
+./configure --host=$TARGET
 make
 export CFLAGS=$CFLAGS -I$MYPATH/libffi-3.3/$TARGET/include
 export LDFLAGS=$LDFLAGS -L$MYPATH/libffi-3.3/$TARGET -static
