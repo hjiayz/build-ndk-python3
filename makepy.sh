@@ -18,3 +18,4 @@ export LINKFORSHARED=""
 cd Python-3.9.1
 ./configure --host=x86_64-linux -build=$TARGET --disable-ipv6 ac_cv_file__dev_ptmx=no ac_cv_file__dev_ptc=no
 make
+cd ..
