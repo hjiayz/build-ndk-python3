@@ -10,8 +10,9 @@ make
 make install
 mack clean
 cd ..
+export MYPATH=$(dirname $(readlink -f "$0"))
 export Host=linux-x86_64
-export NDK=$(dirname $(readlink -f "$0"))/android-ndk-r21d
+export NDK=$MYPATH/android-ndk-r21d
 export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$Host
 export TARGET=aarch64-linux-android
 export API=21
@@ -26,8 +27,8 @@ export READELF=$TOOLCHAIN/bin/$TARGET-readelf
 cd libffi-3.3
 ./configure --host=x86_64-linux -build=$TARGET
 make
-export CFLAGS=$CFLAGS -I/home/ubuntu/libffi-3.3/$TARGET/include
-export LDFLAGS=$LDFLAGS -L/home/ubuntu/libffi-3.3/$TARGET -static
+export CFLAGS=$CFLAGS -I$MYPATH/libffi-3.3/$TARGET/include
+export LDFLAGS=$LDFLAGS -L$MYPATH/libffi-3.3/$TARGET -static
 export LINKFORSHARED=""
 cd ..
 cd Python-3.9.1
