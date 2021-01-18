@@ -1,6 +1,6 @@
 export MYPATH=$(dirname $(readlink -f "$0"))
 export Host=linux-x86_64
-export NDK=$MYPATH/android-ndk-r22d
+export NDK=$MYPATH/android-ndk-r22
 export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$Host
 export TARGET=$1
 export API=21
