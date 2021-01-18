@@ -55,7 +55,7 @@ jobs:
       run: ./upload.sh x86_64-linux-android
     - name: Build project # This would actually build your project, using zip for an example artifact
       run: |
-        zip html.zip *.a
+        zip libs.zip *.a
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -73,6 +73,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./my-artifact.zip
-          asset_name: my-artifact.zip
+          asset_path: ./libs.zip
+          asset_name: libs.zip
           asset_content_type: application/zip
