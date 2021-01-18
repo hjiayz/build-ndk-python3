@@ -35,9 +35,9 @@ jobs:
     - name: upload aarch64
       run: ./upload.sh aarch64-linux-android
     - name: makeffi arm
-      run: ./makeffi.sh arm-linux-androideabi
+      run: ./makeffi.sh arm-linux-androideabi armv7a-linux-androideabi
     - name: makepy arm
-      run: ./makepy.sh arm-linux-androideabi
+      run: ./makepy.sh arm-linux-androideabi armv7a-linux-androideabi
     - name: upload arm
       run: ./upload.sh arm-linux-androideabi
     - name: makeffi i686
