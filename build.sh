@@ -8,7 +8,7 @@ cd Python-3.9.1
 ./configure
 make
 make install
-mack clean
+make clean
 cd ..
 export MYPATH=$(dirname $(readlink -f "$0"))
 export Host=linux-x86_64
