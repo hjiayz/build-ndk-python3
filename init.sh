@@ -1,5 +1,5 @@
 
-wget -q https://dl.google.com/android/repository/android-ndk-r21d-linux-x86_64.zip
+wget -q https://dl.google.com/android/repository/android-ndk-r22-linux-x86_64.zip
 unzip android-ndk-r21d-linux-x86_64.zip > /dev/null
 wget -q ftp://sourceware.org/pub/libffi/libffi-3.3.tar.gz
 tar zxvf libffi-3.3.tar.gz > /dev/null
