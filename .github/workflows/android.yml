@@ -4,6 +4,8 @@ on:
   push:
     tags:
     - 'v*'
+    branches:
+    - main
 jobs:
   build:
 
@@ -26,28 +28,38 @@ jobs:
       run: chmod +x makepy.sh
     - name: Grant execute permission for upload.sh
       run: chmod +x upload.sh
+    - name: Grant execute permission for makessh.sh
+      run: chmod +x makessh.sh
     - name: init
       run: ./init.sh
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
+    - name: makessh aarch64
+      run: ./makessh.sh android-arm64
     - name: makepy aarch64
       run: ./makepy.sh aarch64-linux-android
     - name: upload aarch64
       run: ./upload.sh aarch64-linux-android
     - name: makeffi arm
       run: ./makeffi.sh arm-linux-androideabi armv7a-linux-androideabi
+    - name: makessh arm
+      run: ./makessh.sh android-arm
     - name: makepy arm
       run: ./makepy.sh arm-linux-androideabi armv7a-linux-androideabi
     - name: upload arm
       run: ./upload.sh arm-linux-androideabi
     - name: makeffi i686
       run: ./makeffi.sh i686-linux-android
+    - name: makessh i686
+      run: ./makessh.sh android-x86
     - name: makepy i686
       run: ./makepy.sh i686-linux-android
     - name: upload i686
       run: ./upload.sh i686-linux-android
     - name: makeffi x86_64
       run: ./makeffi.sh x86_64-linux-android
+    - name: makessh x86_64
+      run: ./makessh.sh android-x86_64
     - name: makepy x86_64
       run: ./makepy.sh x86_64-linux-android
     - name: upload x86_64
