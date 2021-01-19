@@ -19,7 +19,7 @@ export LD=$TOOLCHAIN/bin/$TARGET-ld
 export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
-export CFLAGS="-I$MYPATH/libffi-3.3/$TARGET/include -I$TOOLCHAIN/sysroot/usr/include"
+export CFLAGS="-D__ANDROID_API__=28 -I$MYPATH/libffi-3.3/$TARGET/include -I$TOOLCHAIN/sysroot/usr/include"
 export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET -static"
 export LINKFORSHARED=" "
 cd Python-3.9.1
