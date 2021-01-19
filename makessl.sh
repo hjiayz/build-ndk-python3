@@ -1,5 +1,6 @@
 export MYPATH=$(dirname $(readlink -f "$0"))
 export NDK=$MYPATH/android-ndk-r22
+export ANDROID_NDK_ROOT=$NDK
 export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$Host
 export TARGET=$1
 cd openssl-1.1.1i
