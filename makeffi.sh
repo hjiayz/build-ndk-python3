@@ -23,3 +23,7 @@ cd libffi-3.3
 ./configure --host=$CC_TARGET
 make
 cd ..
+cd openssl-1.1.1i
+./configure --host=$CC_TARGET
+make
+cd ..
