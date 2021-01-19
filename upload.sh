@@ -5,3 +5,6 @@ cd ..
 cd libffi-3.3
 make clean
 cd ..
+cd openssl-1.1.1i
+make clean
+cd ..
