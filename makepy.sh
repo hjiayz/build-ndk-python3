@@ -10,7 +10,7 @@ else
   export CC_TARGET=$2
 fi
 export CLANGTARGET=" "
-export API=21
+export API=28
 export AR=$TOOLCHAIN/bin/$TARGET-ar
 export AS=$TOOLCHAIN/bin/$TARGET-as
 export CC=$TOOLCHAIN/bin/$CC_TARGET$API-clang
@@ -19,7 +19,7 @@ export LD=$TOOLCHAIN/bin/$TARGET-ld
 export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
-export CFLAGS="-DANDROID_PLATFORM=android-28 -I$MYPATH/libffi-3.3/$TARGET/include -I$TOOLCHAIN/sysroot/usr/include"
+export CFLAGS="-I$MYPATH/libffi-3.3/$TARGET/include -I$TOOLCHAIN/sysroot/usr/include"
 export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET -static"
 export LINKFORSHARED=" "
 cd Python-3.9.1
