@@ -1,3 +1,4 @@
+pwd
 export MYPATH=$(dirname $(readlink -f "$0"))
 export NDK=$MYPATH/android-ndk-r22
 export ANDROID_NDK_ROOT=$MYPATH/android-ndk-r22
