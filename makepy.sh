@@ -9,8 +9,8 @@ then
 else  
   export CC_TARGET=$2
 fi
-export CLANGTARGET=
-export API=21
+export CLANGTARGET=" "
+export API=29
 export AR=$TOOLCHAIN/bin/$TARGET-ar
 export AS=$TOOLCHAIN/bin/$TARGET-as
 export CC=$TOOLCHAIN/bin/$CC_TARGET$API-clang
@@ -19,10 +19,10 @@ export LD=$TOOLCHAIN/bin/$TARGET-ld
 export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
-export CFLAGS=-I$MYPATH/libffi-3.3/$TARGET/include -I$TOOLCHAIN/sysroot/usr/include
-export LDFLAGS=-L$MYPATH/libffi-3.3/$TARGET -static
-export LINKFORSHARED=""
+export CFLAGS="-I$MYPATH/libffi-3.3/$TARGET/include -fPIC"
+export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET"
+# export LINKFORSHARED=" "
 cd Python-3.9.1
-./configure --host=x86_64-linux -build=$CC_TARGET --disable-ipv6 ac_cv_file__dev_ptmx=no ac_cv_file__dev_ptc=no
+./configure --host=$CC_TARGET --target=$CC_TARGET --build=x86_64-linux  --disable-ipv6 ac_cv_file__dev_ptmx=no ac_cv_file__dev_ptc=no
 make
 cd ..
