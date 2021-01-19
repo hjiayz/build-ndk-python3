@@ -20,6 +20,7 @@ export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
 # export CFLAGS="-I$MYPATH/libffi-3.3/$TARGET/include -I$TOOLCHAIN/sysroot/usr/include"
+export CFLAGS="-fPIC"
 # export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET -static"
 # export LINKFORSHARED=" "
 cd Python-3.9.1
