@@ -5,6 +5,6 @@ cd ..
 cd libffi-3.3
 make clean
 cd ..
-cd openssl-3.0.0-alpha10
+cd openssl
 make clean
 cd ..
