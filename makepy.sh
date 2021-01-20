@@ -20,7 +20,7 @@ export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
 export CFLAGS="-I$MYPATH/libffi-3.3/$TARGET/include -fPIC"
-export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET" -static
+export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET -static"
 # export LINKFORSHARED=" "
 cd Python-3.9.1
 ./configure --host=$CC_TARGET --target=$CC_TARGET --build=x86_64-linux  --disable-ipv6 ac_cv_file__dev_ptmx=no ac_cv_file__dev_ptc=no --with-openssl=$MYPATH/openssl-dir --prefix=$MYPATH/zip-dir/$TARGET
