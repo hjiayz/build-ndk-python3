@@ -28,5 +28,4 @@ export PREFIXPATH=$MYPATH/zip-dir/$TARGET
 make
 make install
 make clean
-find $PREFIXPATH -name '__pycache__' -exec rm -rf {} \;
 cd ..
