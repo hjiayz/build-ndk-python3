@@ -67,7 +67,7 @@ jobs:
     - name: upload x86_64
       run: ./upload.sh x86_64-linux-android
     - name: rm __pycache__
-      run: find ./zip-dir -name '__pycache__' -exec rm -rf {} \;
+      run: find ./zip-dir -name '__pycache__' -exec rm -rf {} \; -prune
     - name: Build zip file
       run: |
         cd zip-dir
