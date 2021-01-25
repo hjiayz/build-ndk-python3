@@ -24,7 +24,7 @@ export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET"
 # export LINKFORSHARED=" "
 cd Python-3.9.1
 export PREFIXPATH=$MYPATH/zip-dir/$TARGET
-./configure --host=$CC_TARGET --target=$CC_TARGET --build=x86_64-linux  --disable-ipv6 ac_cv_file__dev_ptmx=no ac_cv_file__dev_ptc=no --with-openssl=$MYPATH/openssl-dir --prefix=$PREFIXPATH
+./configure --host=$CC_TARGET --target=$CC_TARGET --build=x86_64-linux  --disable-ipv6 ac_cv_file__dev_ptmx=no ac_cv_file__dev_ptc=no --with-openssl=$MYPATH/openssl-dir --without-ensurepip --prefix=$PREFIXPATH
 make
 make install
 make clean
