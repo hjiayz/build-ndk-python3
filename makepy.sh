@@ -29,7 +29,7 @@ make
 make install
 make clean
 cd ..
-python -m install pip
+python -m pip install pip
 pip install crossenv
 python --version
 python -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
