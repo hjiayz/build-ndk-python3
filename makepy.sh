@@ -3,6 +3,7 @@ export Host=linux-x86_64
 export NDK=$MYPATH/android-ndk-r22
 export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$Host
 export TARGET=$1
+export PATH=$PATH:$MYPATH/build/python/bin
 if test -z "$2"
 then
   export CC_TARGET=$1
@@ -29,10 +30,10 @@ make
 make install
 make clean
 cd ..
-python3 -m pip install pip
+$MYPATH/build/python/bin/python3 -m pip install pip
 pip install crossenv
-python3 --version
-python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
+$MYPATH/build/python/bin/python3 --version
+$MYPATH/build/python/bin/python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
 source $PREFIXPATH/venv/bin/activate
 build-pip install cython wheel cffi
 pip download numpy
