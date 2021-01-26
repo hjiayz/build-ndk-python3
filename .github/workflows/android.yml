@@ -34,7 +34,6 @@ jobs:
     - name: build python
       run: |
         sudo apt remove python
-        sudo apt remove pip
         cd Python-3.9.1
         ./configure --prefix=$(pwd)/../build/python
         make
