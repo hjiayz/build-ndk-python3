@@ -30,7 +30,7 @@ jobs:
     - name: Grant execute permission for makessl.sh
       run: chmod +x makessl.sh
     - name: init
-      run: ./init.sh
+      run: sudo ./init.sh
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
     - name: makessl aarch64
