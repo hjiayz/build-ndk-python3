@@ -31,7 +31,7 @@ make clean
 cd ..
 pip install crossenv
 rm -rf venv
-python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 venv
-source ./venv/bin/activate
+python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
+source $PREFIXPATH/venv/bin/activate
 pip install numpy scipy sympy nose
 # pandas
