@@ -29,38 +29,38 @@ make
 make install
 make clean
 cd ..
-python -m pip install pip
+python3 -m pip install pip
 pip install crossenv
-python --version
-python -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
+python3 --version
+python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
 source $PREFIXPATH/venv/bin/activate
 build-pip install cython wheel cffi
 pip download numpy
 unzip -q ./numpy*
 rm numpy*zip
 cd numpy*
-python setup.py install
+python3 setup.py install
 cd ..
 rm -rf numpy*
 pip download --no-binary scipy
 unzip -q ./scipy*
 rm scipy*zip
 cd scipy*
-python setup.py install
+python3 setup.py install
 cd ..
 rm -rf scipy*
 pip download --no-binary pandas
 unzip -q ./pandas*
 rm pandas*zip
 cd pandas*
-python setup.py install
+python3 setup.py install
 cd ..
 rm -rf pandas*
 pip download --no-binary pandas
 unzip -q ./pandas*
 rm pandas*zip
 cd pandas*
-python setup.py install
+python3 setup.py install
 cd ..
 rm -rf pandas*
 pip download --no-binary sympy
