@@ -11,4 +11,3 @@ make
 make install
 make clean
 cd ..
-chmod -R 777 ./*
