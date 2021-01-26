@@ -29,9 +29,10 @@ make
 make install
 make clean
 cd ..
+python -m install pip
 pip install crossenv
-rm -rf venv
-python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
+python --version
+python -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
 source $PREFIXPATH/venv/bin/activate
 build-pip install cython wheel cffi
 pip download numpy
