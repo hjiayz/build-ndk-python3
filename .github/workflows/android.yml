@@ -30,7 +30,15 @@ jobs:
     - name: Grant execute permission for makessl.sh
       run: chmod +x makessl.sh
     - name: init
-      run: sudo ./init.sh
+      run: ./init.sh
+    - name: build python
+      run: |
+        cd Python-3.9.1
+        ./configure
+        make
+        sudo make install
+        make clean
+        cd ..
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
     - name: makessl aarch64
