@@ -31,7 +31,7 @@ make install
 make clean
 cd ..
 $MYPATH/build/python/bin/python3 -m pip install pip
-pip install crossenv
+$MYPATH/build/python/bin/python3 -m pip install crossenv
 $MYPATH/build/python/bin/python3 --version
 $MYPATH/build/python/bin/python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
 source $PREFIXPATH/venv/bin/activate
