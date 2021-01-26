@@ -33,4 +33,4 @@ pip install crossenv
 rm -rf venv
 python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 venv
 source ./venv/bin/activate
-pip -v install numpy
+pip install numpy scipy pandas sympy nose
