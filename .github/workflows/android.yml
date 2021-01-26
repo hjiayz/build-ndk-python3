@@ -33,15 +33,19 @@ jobs:
       run: ./init.sh
     - name: build python
       run: |
+        sudo apt remove python
+        sudo apt remove pip
         cd Python-3.9.1
         ./configure --prefix=$(pwd)/../build/python
         make
         make install
         make clean
         sudo rm /usr/bin/python3
-        sudo ln -s $(pwd)/build/python/bin/python3 /usr/bin/python3
+        sudo rm /usr/bin/python
+        sudo rm /usr/bin/python2
+        sudo ln -s $(pwd)/../build/python/bin/python3 /usr/bin/python3
         export PATH=$PATH:$(pwd)/../build/python/bin
-        python3 -m pip install --upgrade pip
+        $(pwd)/build/python/bin/python3 -m pip install --upgrade pip
         cd ..
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
