@@ -36,6 +36,7 @@ $MYPATH/build/python/bin/python3 --version
 $MYPATH/build/python/bin/python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
 source $PREFIXPATH/venv/bin/activate
 build-pip install cython wheel cffi
+cd $PREFIXPATH/venv/src
 pip download numpy
 unzip -q ./numpy*
 rm numpy*zip
@@ -78,3 +79,4 @@ cd nose*
 python setup.py install
 cd ..
 rm -rf nose*
+cd $MYPATH
