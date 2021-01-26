@@ -44,8 +44,8 @@ jobs:
         sudo rm /usr/bin/python2
         sudo ln -s $(pwd)/../build/python/bin/python3 /usr/bin/python3
         export PATH=$PATH:$(pwd)/../build/python/bin
-        $(pwd)/build/python/bin/python3 -m pip install --upgrade pip
         cd ..
+        $(pwd)/build/python/bin/python3 -m pip install --upgrade pip
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
     - name: makessl aarch64
