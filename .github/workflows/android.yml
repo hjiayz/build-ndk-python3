@@ -34,10 +34,11 @@ jobs:
     - name: build python
       run: |
         cd Python-3.9.1
-        ./configure
+        ./configure --prefix=/usr/python
         make
         sudo make install
-        make clean
+        sudo make clean
+        ln -s /usr/bin/python3 /usr/python/bin/python3
         cd ..
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
