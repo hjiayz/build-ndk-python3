@@ -30,6 +30,7 @@ make install
 make clean
 cd ..
 pip install crossenv
+rm -rf venv
 python3 -m crossenv $PREFIXPATH/bin/python3 venv
 source ./venv/bin/activate
 pip -v install numpy
