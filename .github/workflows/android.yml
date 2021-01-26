@@ -39,7 +39,7 @@ jobs:
         sudo make install
         sudo make clean
         sudo rm /usr/bin/python3
-        sudo ln -s /usr/bin/python3 /usr/python/bin/python3
+        sudo ln -s /usr/python/bin/python3 /usr/bin/python3
         cd ..
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
