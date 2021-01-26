@@ -41,35 +41,35 @@ cd numpy*
 python setup.py install
 cd ..
 rm -rf numpy*
-pip download scipy
+pip download --no-binary scipy
 unzip -q ./scipy*
 rm scipy*zip
 cd scipy*
 python setup.py install
 cd ..
 rm -rf scipy*
-pip download pandas
+pip download --no-binary pandas
 unzip -q ./pandas*
 rm pandas*zip
 cd pandas*
 python setup.py install
 cd ..
 rm -rf pandas*
-pip download pandas
+pip download --no-binary pandas
 unzip -q ./pandas*
 rm pandas*zip
 cd pandas*
 python setup.py install
 cd ..
 rm -rf pandas*
-pip download sympy
+pip download --no-binary sympy
 unzip -q ./sympy*
 rm sympy*zip
 cd sympy*
 python setup.py install
 cd ..
 rm -rf sympy*
-pip download nose
+pip download --no-binary nose
 unzip -q ./nose*
 rm nose*zip
 cd nose*
