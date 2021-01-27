@@ -42,6 +42,7 @@ ls
 export NPY_BLAS_ORDER=
 export NPY_LAPACK_ORDER=
 export LDFLAGS="-lm"
+export LAPACK_SRC=$MYPATH/v3.9.0
 pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
