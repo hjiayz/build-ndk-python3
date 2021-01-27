@@ -34,6 +34,7 @@ jobs:
     - name: build python
       run: |
         sudo apt remove python
+        export PATH=$PATH:$(pwd)/build/python/bin
         cd Python-3.9.1
         ./configure --prefix=$(pwd)/../build/python
         make
@@ -42,10 +43,9 @@ jobs:
         sudo rm /usr/bin/python3
         sudo rm /usr/bin/python
         sudo rm /usr/bin/python2
-        sudo ln -s $(pwd)/../build/python/bin/python3 /usr/bin/python3
-        export PATH=$PATH:$(pwd)/../build/python/bin
         cd ..
-        $(pwd)/build/python/bin/python3 -m pip install --upgrade pip
+        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        $(pwd)/build/python/bin/python3 git-pip.py
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
     - name: makessl aarch64
