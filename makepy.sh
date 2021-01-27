@@ -41,7 +41,7 @@ cd $PREFIXPATH/venv/src
 ls
 export NPY_BLAS_ORDER=
 export NPY_LAPACK_ORDER=
-export LDFLAGS="-lm -lcompiler_rt"
+export LDFLAGS="-lm"
 pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
@@ -58,13 +58,7 @@ cd ..
 rm -rf scipy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
 unzip -q ./pandas*
-rm pandas*zip
-cd pandas*
-python3 setup.py install
-cd ..
-rm -rf pandas*
-pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
-unzip -q ./pandas*
+tar xzvf ./pandas*
 rm pandas*zip
 cd pandas*
 python3 setup.py install
@@ -72,6 +66,7 @@ cd ..
 rm -rf pandas*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src sympy
 unzip -q ./sympy*
+tar xzvf ./sympy*
 rm sympy*zip
 cd sympy*
 python setup.py install
@@ -79,6 +74,7 @@ cd ..
 rm -rf sympy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src nose
 unzip -q ./nose*
+tar xzvf ./nose*
 rm nose*zip
 cd nose*
 python setup.py install
