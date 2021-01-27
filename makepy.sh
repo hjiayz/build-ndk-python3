@@ -53,6 +53,7 @@ rm -rf numpy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
 unzip -q ./scipy*
 rm scipy*zip
+rm scipy*gz
 cd scipy*
 python3 setup.py install
 cd ..
@@ -61,6 +62,7 @@ pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
 unzip -q ./pandas*
 tar xzvf ./pandas*
 rm pandas*zip
+rm pandas*gz
 cd pandas*
 python3 setup.py install
 cd ..
@@ -69,6 +71,7 @@ pip download --no-binary :all: --src $PREFIXPATH/venv/src sympy
 unzip -q ./sympy*
 tar xzvf ./sympy*
 rm sympy*zip
+rm sympy*gz
 cd sympy*
 python setup.py install
 cd ..
@@ -77,6 +80,7 @@ pip download --no-binary :all: --src $PREFIXPATH/venv/src nose
 unzip -q ./nose*
 tar xzvf ./nose*
 rm nose*zip
+rm nose*gz
 cd nose*
 python setup.py install
 cd ..
