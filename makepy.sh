@@ -39,42 +39,42 @@ ls
 mkdir $PREFIXPATH/venv/src
 cd $PREFIXPATH/venv/src
 ls
-pip download numpy
+pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
 cd numpy*
 python3 setup.py install
 cd ..
 rm -rf numpy*
-pip download --no-binary scipy
+pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
 unzip -q ./scipy*
 rm scipy*zip
 cd scipy*
 python3 setup.py install
 cd ..
 rm -rf scipy*
-pip download --no-binary pandas
+pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
 unzip -q ./pandas*
 rm pandas*zip
 cd pandas*
 python3 setup.py install
 cd ..
 rm -rf pandas*
-pip download --no-binary pandas
+pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
 unzip -q ./pandas*
 rm pandas*zip
 cd pandas*
 python3 setup.py install
 cd ..
 rm -rf pandas*
-pip download --no-binary sympy
+pip download --no-binary :all: --src $PREFIXPATH/venv/src sympy
 unzip -q ./sympy*
 rm sympy*zip
 cd sympy*
 python setup.py install
 cd ..
 rm -rf sympy*
-pip download --no-binary nose
+pip download --no-binary :all: --src $PREFIXPATH/venv/src nose
 unzip -q ./nose*
 rm nose*zip
 cd nose*
