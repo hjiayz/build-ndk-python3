@@ -34,7 +34,7 @@ $MYPATH/build/python/bin/pip3 install crossenv
 $MYPATH/build/python/bin/python3 --version
 $MYPATH/build/python/bin/python3 -m crossenv --sysroot $TOOLCHAIN/sysroot $PREFIXPATH/bin/python3 $PREFIXPATH/venv
 source $PREFIXPATH/venv/bin/activate
-build-pip install cython wheel cffi
+build-pip install cython wheel cffi numpy
 ls
 mkdir $PREFIXPATH/venv/src
 cd $PREFIXPATH/venv/src
