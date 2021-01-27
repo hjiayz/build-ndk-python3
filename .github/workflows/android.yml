@@ -44,10 +44,6 @@ jobs:
         sudo rm /usr/bin/python
         sudo rm /usr/bin/python2
         cd ..
-        wget https://bootstrap.pypa.io/get-pip.py
-        ls -l
-        ls $(pwd)/build/python/bin/
-        $(pwd)/build/python/bin/python3 git-pip.py
     - name: makeffi aarch64
       run: ./makeffi.sh aarch64-linux-android
     - name: makessl aarch64
