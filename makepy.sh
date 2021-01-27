@@ -41,6 +41,7 @@ cd $PREFIXPATH/venv/src
 ls
 export NPY_BLAS_ORDER=
 export NPY_LAPACK_ORDER=
+export LDFLAGS="-lm -lcompiler_rt"
 pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
