@@ -61,7 +61,9 @@ cd ..
 rm -rf numpy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
 unzip -q ./scipy*
+tar xzvf ./scipy*
 rm scipy*zip
+rm scipy*gz
 cd scipy*
 echo "[openblas]" > site.cfg
 echo "libraries = openblas" >> site.cfg
@@ -74,11 +76,11 @@ cd ..
 rm -rf scipy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
 unzip -q ./pandas*
-tar xzvf ./pandas* > /dev/null || exit 1
+tar xzvf ./pandas* > /dev/null
 rm pandas*zip
 rm pandas*gz
 cd pandas*
-python3 setup.py install
+python3 setup.py install || exit 1
 cd ..
 rm -rf pandas*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src sympy
