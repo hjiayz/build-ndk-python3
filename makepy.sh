@@ -43,8 +43,8 @@ ls
 #export NPY_LAPACK_ORDER=
 export LDFLAGS="-lm"
 #export LAPACK_SRC=$MYPATH/v3.9.0
-export BLAS=$MYPATH/zip-dir/$TARGET/openblas/lib/libblas.so
-export LAPACK=$MYPATH/zip-dir/$TARGET/openblas/lib/liblapack.so
+export BLAS=$MYPATH/zip-dir/openblas/$TARGET/lib/libblas.so
+export LAPACK=$MYPATH/zip-dir/openblas/$TARGET/lib/liblapack.so
 pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
