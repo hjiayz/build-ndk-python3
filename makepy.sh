@@ -39,42 +39,36 @@ ls
 mkdir $PREFIXPATH/venv/src
 cd $PREFIXPATH/venv/src
 ls
-export NPY_BLAS_ORDER=openblas
-export NPY_LAPACK_ORDER=openblas
+export NPY_BLAS_ORDER=
+export NPY_LAPACK_ORDER=
 #export CFLAGS="-I$MYPATH/zip-dir/openblas/$TARGET/include $CFLAGS"
-#export LDFLAGS="-lm"
+export LDFLAGS="-lm"
 #export LAPACK_SRC=$MYPATH/v3.9.0
-export BLAS=$MYPATH/zip-dir/openblas/$TARGET/lib/libblas.so
-export LAPACK=$MYPATH/zip-dir/openblas/$TARGET/lib/liblapack.so
+#export BLAS=$MYPATH/zip-dir/openblas/$TARGET/lib/libblas.so
+#export LAPACK=$MYPATH/zip-dir/openblas/$TARGET/lib/liblapack.so
 pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
 cd numpy*
-echo "[openblas]" >  ~/.numpy-site.cfg 
-echo "libraries = openblas" >>  ~/.numpy-site.cfg 
-echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
-echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >>  ~/.numpy-site.cfg 
-echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
-echo "search_static_first = true" >>  ~/.numpy-site.cfg 
+#echo "[openblas]" >  ~/.numpy-site.cfg 
+#echo "libraries = openblas" >>  ~/.numpy-site.cfg 
+#echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
+#echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >>  ~/.numpy-site.cfg 
+#echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
+#echo "search_static_first = true" >>  ~/.numpy-site.cfg 
 python3 setup.py install || exit 1
 cd ..
 rm -rf numpy*
-echo scipystart...... 
-pip download --no-deps --no-binary :all: --src $PREFIXPATH/venv/src scipy
-unzip -q ./scipy*
-tar xzvf ./scipy*
-rm scipy*zip
-rm scipy*gz
-cd scipy*
-echo "[openblas]" >  ~/.numpy-site.cfg 
-echo "libraries = openblas" >>  ~/.numpy-site.cfg 
-echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
-echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >>  ~/.numpy-site.cfg 
-echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
-echo "search_static_first = true" >>  ~/.numpy-site.cfg 
-python3 setup.py install || exit 1
-cd ..
-rm -rf scipy*
+#echo scipystart...... 
+#pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
+#unzip -q ./scipy*
+#tar xzvf ./scipy*
+#rm scipy*zip
+#rm scipy*gz
+#cd scipy*
+#python3 setup.py install || exit 1
+#cd ..
+#rm -rf scipy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
 unzip -q ./pandas*
 tar xzvf ./pandas* > /dev/null
