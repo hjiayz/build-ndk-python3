@@ -59,7 +59,7 @@ echo "search_static_first = true" >> site.cfg
 python3 setup.py install || exit 1
 cd ..
 rm -rf numpy*
-pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
+pip download --no-deps --no-binary :all: --src $PREFIXPATH/venv/src scipy
 unzip -q ./scipy*
 tar xzvf ./scipy*
 rm scipy*zip
