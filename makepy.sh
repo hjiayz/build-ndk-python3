@@ -50,27 +50,28 @@ pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
 cd numpy*
-echo "[openblas]" > site.cfg
-echo "libraries = openblas" >> site.cfg
-echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
-echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >> site.cfg
-echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
-echo "search_static_first = true" >> site.cfg
+echo "[openblas]" >  ~/.numpy-site.cfg 
+echo "libraries = openblas" >>  ~/.numpy-site.cfg 
+echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
+echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >>  ~/.numpy-site.cfg 
+echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
+echo "search_static_first = true" >>  ~/.numpy-site.cfg 
 python3 setup.py install || exit 1
 cd ..
 rm -rf numpy*
+echo scipystart...... 
 pip download --no-deps --no-binary :all: --src $PREFIXPATH/venv/src scipy
 unzip -q ./scipy*
 tar xzvf ./scipy*
 rm scipy*zip
 rm scipy*gz
 cd scipy*
-echo "[openblas]" > site.cfg
-echo "libraries = openblas" >> site.cfg
-echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
-echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >> site.cfg
-echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
-echo "search_static_first = true" >> site.cfg
+echo "[openblas]" >  ~/.numpy-site.cfg 
+echo "libraries = openblas" >>  ~/.numpy-site.cfg 
+echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
+echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >>  ~/.numpy-site.cfg 
+echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >>  ~/.numpy-site.cfg 
+echo "search_static_first = true" >>  ~/.numpy-site.cfg 
 python3 setup.py install || exit 1
 cd ..
 rm -rf scipy*
