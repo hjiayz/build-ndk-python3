@@ -55,6 +55,7 @@ echo "libraries = openblas" >> site.cfg
 echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
 echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >> site.cfg
 echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
+echo "search_static_first = true" >> site.cfg
 python3 setup.py install
 cd ..
 rm -rf numpy*
