@@ -39,10 +39,12 @@ ls
 mkdir $PREFIXPATH/venv/src
 cd $PREFIXPATH/venv/src
 ls
-export NPY_BLAS_ORDER=
-export NPY_LAPACK_ORDER=
+#export NPY_BLAS_ORDER=
+#export NPY_LAPACK_ORDER=
 export LDFLAGS="-lm"
-export LAPACK_SRC=$MYPATH/v3.9.0
+#export LAPACK_SRC=$MYPATH/v3.9.0
+export BLAS=$MYPATH/zip-dir/$TARGET/openblas/lib/libblas.so
+export LAPACK=$MYPATH/zip-dir/$TARGET/openblas/lib/liblapack.so
 pip download  --no-binary :all: --src $PREFIXPATH/venv/src numpy
 unzip -q ./numpy*
 rm numpy*zip
