@@ -16,7 +16,7 @@ make \
     HOSTCC=gcc \
     ARM_SOFTFP_ABI=1 \
     -j4
-sudo make install PREFIX=$MYPATH/zip-dir/openblas/arm-linux-androideabi
+make install PREFIX=$MYPATH/zip-dir/openblas/arm-linux-androideabi
 
 make clean
 make \
@@ -26,7 +26,7 @@ make \
     AR=$TOOLCHAIN/bin/aarch64-linux-android-ar \
     HOSTCC=gcc \
     -j4
-sudo make install PREFIX=$MYPATH/zip-dir/openblas/aarch64-linux-android
+make install PREFIX=$MYPATH/zip-dir/openblas/aarch64-linux-android
 
 make clean
 make \
@@ -37,7 +37,7 @@ make \
     HOSTCC=gcc \
     ARM_SOFTFP_ABI=1 \
     -j4
-sudo make install PREFIX=$MYPATH/zip-dir/openblas/i686-linux-android
+make install PREFIX=$MYPATH/zip-dir/openblas/i686-linux-android
 
 # This will build for x86_64 
 make clean
@@ -49,4 +49,4 @@ make \
     HOSTCC=gcc \
     ARM_SOFTFP_ABI=1 \
     -j4
-sudo make install PREFIX=$MYPATH/zip-dir/openblas/x86_64-linux-android
+make install PREFIX=$MYPATH/zip-dir/openblas/x86_64-linux-android
