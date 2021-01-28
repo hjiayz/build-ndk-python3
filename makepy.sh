@@ -26,8 +26,8 @@ export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET"
 cd Python-3.9.1
 export PREFIXPATH=$MYPATH/zip-dir/$TARGET
 ./configure --host=$CC_TARGET --target=$CC_TARGET --build=x86_64-linux  --disable-ipv6 ac_cv_file__dev_ptmx=no ac_cv_file__dev_ptc=no --with-openssl=$MYPATH/openssl-dir --without-ensurepip --prefix=$PREFIXPATH
-make
-make install
+make || exit 1
+make install || exit 1
 make clean
 cd ..
 $MYPATH/build/python/bin/pip3 install crossenv
@@ -56,19 +56,19 @@ echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
 echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >> site.cfg
 echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
 echo "search_static_first = true" >> site.cfg
-python3 setup.py install
+python3 setup.py install || exit 1
 cd ..
 rm -rf numpy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
 unzip -q ./scipy*
 rm scipy*zip
 cd scipy*
-python3 setup.py install
+python3 setup.py install || exit 1
 cd ..
 rm -rf scipy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src pandas
 unzip -q ./pandas*
-tar xzvf ./pandas* > /dev/null
+tar xzvf ./pandas* > /dev/null || exit 1
 rm pandas*zip
 rm pandas*gz
 cd pandas*
@@ -81,7 +81,7 @@ tar xzvf ./sympy* > /dev/null
 rm sympy*zip
 rm sympy*gz
 cd sympy*
-python setup.py install
+python setup.py install || exit 1
 cd ..
 rm -rf sympy*
 pip download --no-binary :all: --src $PREFIXPATH/venv/src nose
@@ -90,7 +90,7 @@ tar xzvf ./nose* > /dev/null
 rm nose*zip
 rm nose*gz
 cd nose*
-python setup.py install
+python setup.py install || exit 1
 cd ..
 rm -rf nose*
 cd $MYPATH
