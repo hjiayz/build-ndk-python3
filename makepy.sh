@@ -63,6 +63,12 @@ pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
 unzip -q ./scipy*
 rm scipy*zip
 cd scipy*
+echo "[openblas]" > site.cfg
+echo "libraries = openblas" >> site.cfg
+echo "library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
+echo "include_dirs = $MYPATH/zip-dir/openblas/$TARGET/include" >> site.cfg
+echo "runtime_library_dirs = $MYPATH/zip-dir/openblas/$TARGET/lib" >> site.cfg
+echo "search_static_first = true" >> site.cfg
 python3 setup.py install || exit 1
 cd ..
 rm -rf scipy*
