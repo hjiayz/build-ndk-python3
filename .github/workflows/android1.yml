@@ -30,7 +30,7 @@ jobs:
     - name: make openblas
       run: |
         chmod +x makeopenblas.sh
-        ./makeopenblas.sh
+        echo ./makeopenblas.sh
     - name: build python
       run: |
         sudo apt remove python
