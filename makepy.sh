@@ -41,7 +41,8 @@ cd $PREFIXPATH/venv/src
 ls
 #export NPY_BLAS_ORDER=
 #export NPY_LAPACK_ORDER=
-export LDFLAGS="-lm"
+export CFLAGS="-I$MYPATH/zip-dir/openblas/$TARGET/include $CFLAGS"
+export LDFLAGS="-lm -L$MYPATH/zip-dir/openblas/$TARGET/lib"
 #export LAPACK_SRC=$MYPATH/v3.9.0
 export BLAS=$MYPATH/zip-dir/openblas/$TARGET/lib/libblas.so
 export LAPACK=$MYPATH/zip-dir/openblas/$TARGET/lib/liblapack.so
