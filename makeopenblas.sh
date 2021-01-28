@@ -5,7 +5,7 @@ export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$Host
 
 wget https://github.com/xianyi/OpenBLAS/archive/v0.3.13.zip
 unzip v0.3.13.zip
-cd v0.3.13
+cd OpenBLAS-0.3.13
 
 make clean
 make \
