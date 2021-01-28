@@ -16,7 +16,7 @@ make \
     HOSTCC=gcc \
     ARM_SOFTFP_ABI=1 \
     -j4
-sudo make install PREFIX=$MYPATH/zip-dir/arm-linux-androideabi
+sudo make install PREFIX=$MYPATH/zip-dir/arm-linux-androideabi/openblas
 
 make clean
 make \
