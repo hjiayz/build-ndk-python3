@@ -59,8 +59,8 @@ cd numpy*
 python3 setup.py install || exit 1
 cd ..
 rm -rf numpy*
-echo scipystart...... 
-pip install scipy
+#echo scipystart...... 
+#pip install scipy
 echo jedistart......
 pip install jedi
 #echo scipystart...... 
@@ -101,3 +101,5 @@ python setup.py install || exit 1
 cd ..
 rm -rf nose*
 cd $MYPATH
+cp -a $PREFIXPATH/venv/cross/lib/python3.9/site-packages/* $PREFIXPATH/lib/python3.9/site-packages/
+rm -rf $PREFIXPATH/venv
