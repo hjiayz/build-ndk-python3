@@ -13,6 +13,9 @@ else
 fi
 export CLANGTARGET=
 export API=29
+cd zlib-1.2.11
+export ABI=armeabi-v7a
+export TARGET=arm-linux-androideabi
 export AR=$TOOLCHAIN/bin/$TARGET-ar
 export AS=$TOOLCHAIN/bin/$TARGET-as
 export CC=$TOOLCHAIN/bin/$CC_TARGET$API-clang
@@ -21,49 +24,54 @@ export LD=$TOOLCHAIN/bin/$TARGET-ld
 export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
-cd zlib-1.2.11
-export ABI=armeabi-v7a
-export TARGET=armv7a-linux-androideabi
-cmake \
-    -B${MYPATH}/zlib_file/$TARGET
-    -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
-    -DANDROID_ABI=$ABI \
-    -DANDROID_NATIVE_API_LEVEL=$API \
+./configure --host=armv7a-linux-androideabi
 make
-make install
+make install PREFIX=${MYPATH}/zlib_file/$TARGET
 make clean
 ls ${MYPATH}/zlib_file/$TARGET
 export ABI=arm64-v8a
 export TARGET=aarch64-linux-android
-cmake \
-    -B${MYPATH}/zlib_file/$TARGET
-    -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
-    -DANDROID_ABI=$ABI \
-    -DANDROID_NATIVE_API_LEVEL=$API \
+export AR=$TOOLCHAIN/bin/$TARGET-ar
+export AS=$TOOLCHAIN/bin/$TARGET-as
+export CC=$TOOLCHAIN/bin/$CC_TARGET$API-clang
+export CXX=$TOOLCHAIN/bin/$CC_TARGET$API-clang++
+export LD=$TOOLCHAIN/bin/$TARGET-ld
+export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
+export STRIP=$TOOLCHAIN/bin/$TARGET-strip
+export READELF=$TOOLCHAIN/bin/$TARGET-readelf
+./configure --host=$TARGET
 make
-make install
+make install PREFIX=${MYPATH}/zlib_file/$TARGET
 make clean
 ls ${MYPATH}/zlib_file/$TARGET
 export ABI=x86
 export TARGET=i686-linux-android
-cmake \
-    -B${MYPATH}/zlib_file/$TARGET
-    -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
-    -DANDROID_ABI=$ABI \
-    -DANDROID_NATIVE_API_LEVEL=$API \
+export AR=$TOOLCHAIN/bin/$TARGET-ar
+export AS=$TOOLCHAIN/bin/$TARGET-as
+export CC=$TOOLCHAIN/bin/$CC_TARGET$API-clang
+export CXX=$TOOLCHAIN/bin/$CC_TARGET$API-clang++
+export LD=$TOOLCHAIN/bin/$TARGET-ld
+export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
+export STRIP=$TOOLCHAIN/bin/$TARGET-strip
+export READELF=$TOOLCHAIN/bin/$TARGET-readelf
+./configure --host=$TARGET
 make
-make install
+make install PREFIX=${MYPATH}/zlib_file/$TARGET
 make clean
 ls ${MYPATH}/zlib_file/$TARGET
 export ABI=x86_64
 export TARGET=x86_64-linux-android
-cmake \
-    -B${MYPATH}/zlib_file/$TARGET
-    -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
-    -DANDROID_ABI=$ABI \
-    -DANDROID_NATIVE_API_LEVEL=$API \
+export AR=$TOOLCHAIN/bin/$TARGET-ar
+export AS=$TOOLCHAIN/bin/$TARGET-as
+export CC=$TOOLCHAIN/bin/$CC_TARGET$API-clang
+export CXX=$TOOLCHAIN/bin/$CC_TARGET$API-clang++
+export LD=$TOOLCHAIN/bin/$TARGET-ld
+export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
+export STRIP=$TOOLCHAIN/bin/$TARGET-strip
+export READELF=$TOOLCHAIN/bin/$TARGET-readelf
+./configure --host=$TARGET
 make
-make install
+make install PREFIX=${MYPATH}/zlib_file/$TARGET
 make clean
 ls ${MYPATH}/zlib_file/$TARGET
 cd ..
