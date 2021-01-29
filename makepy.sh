@@ -59,6 +59,10 @@ cd numpy*
 python3 setup.py install || exit 1
 cd ..
 rm -rf numpy*
+echo scipystart...... 
+pip install scipy
+echo jedistart......
+pip install jedi
 #echo scipystart...... 
 #pip download --no-binary :all: --src $PREFIXPATH/venv/src scipy
 #unzip -q ./scipy*
