@@ -32,6 +32,7 @@ cmake \
 make
 make install
 make clean
+ls ${MYPATH}/zlib_file/$TARGET
 export ABI=arm64-v8a
 export TARGET=aarch64-linux-android
 cmake \
@@ -42,6 +43,7 @@ cmake \
 make
 make install
 make clean
+ls ${MYPATH}/zlib_file/$TARGET
 export ABI=x86
 export TARGET=i686-linux-android
 cmake \
@@ -52,6 +54,7 @@ cmake \
 make
 make install
 make clean
+ls ${MYPATH}/zlib_file/$TARGET
 export ABI=x86_64
 export TARGET=x86_64-linux-android
 cmake \
@@ -62,4 +65,5 @@ cmake \
 make
 make install
 make clean
+ls ${MYPATH}/zlib_file/$TARGET
 cd ..
