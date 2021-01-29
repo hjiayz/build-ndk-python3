@@ -27,10 +27,6 @@ jobs:
       run: chmod +x makessl.sh
     - name: init
       run: ./init.sh
-    - name: make zlib
-      run: |
-        chmod +x makezlib.sh
-        ./makezlib.sh
     - name: build python
       run: |
         sudo apt remove python
