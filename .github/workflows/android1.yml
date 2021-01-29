@@ -27,10 +27,10 @@ jobs:
       run: chmod +x makessl.sh
     - name: init
       run: ./init.sh
-    - name: make openblas
+    - name: make zlib
       run: |
-        chmod +x makeopenblas.sh
-        echo ./makeopenblas.sh
+        chmod +x makezlib.sh
+        ./makezlib.sh
     - name: build python
       run: |
         sudo apt remove python
