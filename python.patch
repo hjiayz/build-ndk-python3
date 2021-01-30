@@ -1,0 +1,9 @@
+689c689
+<                         elif line.startswith("clang version"):
+---
+>                         elif "clang version" in line:
+1606c1606,1607
+<                 if (self.compiler.find_library_file(self.lib_dirs, 'z')):
+---
+>                 if (self.compiler.find_library_file(self.lib_dirs, 'z') or
+>                         'ANDROID_API_LEVEL'in self.config_h_vars):
