@@ -21,7 +21,7 @@ export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
 export STRIP=$TOOLCHAIN/bin/$TARGET-strip
 export READELF=$TOOLCHAIN/bin/$TARGET-readelf
 export CFLAGS="-I$MYPATH/libffi-3.3/$TARGET/include --sysroot=$TOOLCHAIN/sysroot -fPIC"
-export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET -lz"
+export LDFLAGS="-L$MYPATH/libffi-3.3/$TARGET"
 # export LINKFORSHARED=" "
 cd Python-3.9.1
 export PREFIXPATH=$MYPATH/zip-dir/$TARGET
